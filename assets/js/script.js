@@ -17,7 +17,7 @@ var hour16 = $("#4:00pm");
 var hour17 = $("#5:00pm");
 var hour18 = $("#6:00pm");
 
-var workHours = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17];
+var workHours = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17, hour18];
 $('#currentDate').text(currentDate);
 
 function scheduleEvents() {
@@ -47,16 +47,16 @@ function scheduleEvents() {
 
 function backgoundColor () {
     $(".form-control").each(function(){
-        var timeSlot = parseInt($(this).attr("id"));
+        var timeTest = parseInt($(this).attr("id"));
         hour = parseInt(hour);
-        console.log(timeSlot);
+        console.log(timeTest);
         console.log(hour);
-        if (hour > timeSlot) {
-            $(this).addClass("#past");
-        } else if (hour < timeSlot) {
-            $(this).addClass("#future");
+        if (hour > timeTest) {
+            $(this).addClass("past");
+        } else if (hour < timeTest) {
+            $(this).addClass("future");
         } else {
-            $(this).addClass("#present");
+            $(this).addClass("present");
         }
     });
 }
