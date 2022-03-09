@@ -1,7 +1,7 @@
 myStorage = window.localStorage;
 
 var hour = moment().format('h:mm:ss a');
-var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
+var currentDay = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
 var userInput;
 var hourSpan;
 
@@ -18,7 +18,7 @@ var hour17 = $("#5:00pm");
 var hour18 = $("#6:00pm");
 
 var workHours = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17, hour18];
-$('#currentDate').text(currentDate);
+$('#currentDay').text(currentDay);
 
 function scheduleEvents() {
     var event8 = JSON.parse(localStorage.getItem("8:00 AM"));
@@ -45,15 +45,15 @@ function scheduleEvents() {
     hour18.val(event18);
 }
 
-function backgoundColor () {
-    $(".form-control").each(function(){
-        var timeTest = parseInt($(this).attr("id"));
+function backgroundColor () {
+    $(".form-control").each(function () {
+        var timeSlot = parseInt($(this).attr("id"));
         hour = parseInt(hour);
-        console.log(timeTest);
+        console.log(timeSlot);
         console.log(hour);
-        if (hour > timeTest) {
+        if (hour > timeSlot) {
             $(this).addClass("past");
-        } else if (hour < timeTest) {
+        } else if (hour < timeSlot) {
             $(this).addClass("future");
         } else {
             $(this).addClass("present");
