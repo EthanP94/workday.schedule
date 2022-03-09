@@ -16,9 +16,8 @@
     />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,7 +28,15 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+    <div class="row">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text hour">08:00 am</span>
+          </div>
+          <textarea class="form-control" aria-label="With textarea" id="8:00am"></textarea>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
+        </div>
+      </div>
       <div class="row">
         <div class="input-group">
           <div class="input-group-prepend">
@@ -111,9 +118,18 @@
           <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
         </div>
       </div>
+      <div class="row">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text hour">06:00 pm</span>
+          </div>
+          <textarea class="form-control" aria-label="With textarea" id="6:00pm"></textarea>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
+        </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
