@@ -1,6 +1,6 @@
 myStorage = window.localStorage;
 
-var hour = moment().format('h:mm:ss a');
+var hour = moment().format("H");
 var currentDay = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
 var userInput;
 var hourSpan;
@@ -21,34 +21,35 @@ var workHours = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, h
 $('#currentDay').text(currentDay);
 
 function scheduleEvents() {
-    var event8 = JSON.parse(localStorage.getItem("8:00 AM"));
+    var event8 = JSON.parse(localStorage.getItem("8:00 am"));
     hour8.val(event8);
-    var event9 = JSON.parse(localStorage.getItem("9:00 AM"));
+    var event9 = JSON.parse(localStorage.getItem("9:00 am"));
     hour9.val(event9);
-    var event10 = JSON.parse(localStorage.getItem("10:00 AM"));
+    var event10 = JSON.parse(localStorage.getItem("10:00 am"));
     hour10.val(event10);
-    var event11 = JSON.parse(localStorage.getItem("11:00 AM"));
+    var event11 = JSON.parse(localStorage.getItem("11:00 am"));
     hour11.val(event11);
-    var event12 = JSON.parse(localStorage.getItem("12:00 PM"));
+    var event12 = JSON.parse(localStorage.getItem("12:00 pm"));
     hour12.val(event12);
-    var event13 = JSON.parse(localStorage.getItem("1:00 PM"));
+    var event13 = JSON.parse(localStorage.getItem("1:00 pm"));
     hour13.val(event13);
-    var event14 = JSON.parse(localStorage.getItem("2:00 PM"));
+    var event14 = JSON.parse(localStorage.getItem("2:00 pm"));
     hour14.val(event14);
-    var event15 = JSON.parse(localStorage.getItem("3:00 PM"));
+    var event15 = JSON.parse(localStorage.getItem("3:00 pm"));
     hour15.val(event15);
-    var event16= JSON.parse(localStorage.getItem("4:00 PM"));
+    var event16= JSON.parse(localStorage.getItem("4:00 pm"));
     hour16.val(event16);
-    var event17 = JSON.parse(localStorage.getItem("5:00 PM"));
+    var event17 = JSON.parse(localStorage.getItem("5:00 pm"));
     hour17.val(event17);
-    var event18 = JSON.parse(localStorage.getItem("6:00 PM"));
+    var event18 = JSON.parse(localStorage.getItem("6:00 pm"));
     hour18.val(event18);
 }
 
-function backgroundColor () {
+function backgroundColor (){
     $(".form-control").each(function () {
-        var timeSlot = parseInt($(this).attr("id"));
-        hour = parseInt(hour);
+        var timeSlot = +($(this).attr("time"));
+        console.log(timeSlot)
+        hour = +(hour);
         console.log(timeSlot);
         console.log(hour);
         if (hour > timeSlot) {
@@ -63,7 +64,7 @@ function backgroundColor () {
 
 $(document).ready(function(){
     scheduleEvents()
-    backgoundColor()
+    backgroundColor()
     $(".saveBtn").on("click", function(){
         userInput = $(this).siblings(".form-control").val().trim();
         console.log(userInput);
